@@ -1,0 +1,94 @@
+.app {
+  min-height: 100vh;
+  background-color: #dae0e6;
+}
+
+.app__layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.app__sidebar {
+  min-width: 0;
+}
+
+.app__main {
+  min-width: 0;
+}
+
+.app__sidebar-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border: 1px solid #edeff1;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1b;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  grid-column: 1 / -1;
+}
+
+.app__sidebar-toggle:hover {
+  background-color: #f6f7f8;
+}
+
+.app__sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .app__layout {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .app__sidebar-toggle {
+    display: flex;
+  }
+
+  .app__sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 150;
+    padding: 1rem;
+    background-color: #dae0e6;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .app__sidebar--open {
+    display: block;
+    transform: translateX(0);
+  }
+
+  .app__sidebar-backdrop {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 140;
+    animation: fadeIn 0.2s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

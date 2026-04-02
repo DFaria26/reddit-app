@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #edeff1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.header__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1b;
+  margin: 0;
+}
+
+.header__title-accent {
+  color: #ff4500;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .header__title {
+    font-size: 1.1rem;
+  }
+}
